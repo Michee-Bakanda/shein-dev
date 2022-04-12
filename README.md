@@ -6,7 +6,7 @@ Message from **schadrack_btb**
 # work-flow
 <br/>
 git clone the repo <br/> than run npm i to install the depedencies <br/>
-please work on your own branches ,  commit  the changes than push to github <br/>
+please work in your own branches ,  commit  the changes than push to github <br/>
 send pull request before merge and no one should be able to merge their own code
 <br/>
 
