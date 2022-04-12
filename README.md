@@ -1,5 +1,5 @@
-# shein-dev
-message from schadrack_btb
+# Welcome to shein website repository
+Message from **schadrack_btb**
 
 
 
