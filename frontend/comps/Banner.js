@@ -1,9 +1,8 @@
- 
-export default  Banner = () =>{
-    return(
-        <div>
-             <h1>Hello world</h1>
-        </div>
-    )
+import React from 'react'
+
+export const Banner = () => {
+  return (
+    <div style={{backgroundColor: "black", height: "20vh"}}>Banner</div>
+  )
 }
 
