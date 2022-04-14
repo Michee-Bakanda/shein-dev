@@ -14,3 +14,43 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.swiper-button-prev:after{
+  color: black;
+  background-color: white;
+  height: 40px;
+  --swiper-navigation-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  font-weight: 1000;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #000;
+  position: fixed;
+  left: 65px;
+  right: 0;
+  bottom: 495px;
+
+}
+
+.swiper-button-next:after {
+  color: black;
+  background-color: white;
+  height: 40px;
+  --swiper-navigation-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  font-weight: 1000;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #000;
+  position: fixed;
+  /* left: 1px; */
+  right: 70px;
+  bottom: 495px;
+}
+
+
+
