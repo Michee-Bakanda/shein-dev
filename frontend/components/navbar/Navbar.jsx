@@ -117,7 +117,7 @@ const heading ={
 
 const Navbar = () => {
   const [input, setInput] = React.useState("Shorts and shirts");
-
+  const [signIn , setSignIn] = React.useState(false)
   // const resetInput = () => {
   //        setInput('')
   // };
@@ -287,7 +287,19 @@ const Navbar = () => {
               <WorkOutlineIcon sx={icon} /> 
               <Box sx={{position:"absolute",margin:"0 0 30px  30px",fontWeight:"bold"}}>{0}</Box>
                 <Box className="dropicon-content" style={{left:"1200px",position:"fixed", height:"200px",width:"300px"}}>
+                  {signIn?'hello':
+                  
+                    <Box sx={{height:"100%",textAlign:"center"}}>
+                      <Box sx={{display:"flex",justifyContent:"center"}}>
+                      <img src="carrt.png" alt="" style={{width:"100px"}} />
+                      </Box>
+                      <Typography variant="h6" sx={{color:"#888",fontSize:"14px"}}>Shopping Bag is empty</Typography> <br />
+                      <Typography variant="p" sx={{color:"#888",fontSize:"11px",margin:"40px 0"}}>
+                      Welcome back! If you had items in your shopping bag, we have saved them for you. You can <Link href="https://www.google.com" style={{cursor:"pointer",fontSize:"16px"}}><b> SIGN IN</b></Link>  now to see them, or whenever you're ready to check out.
+                      </Typography>
+                      
                     
+                    </Box>}
                 </Box>
               </Box>
 
