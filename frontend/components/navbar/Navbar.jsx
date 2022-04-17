@@ -347,8 +347,8 @@ const Navbar = () => {
                   )}
                 </Box>
               </Box>
-
               <FavoriteIcon sx={icon} />
+              <span style={{ fontWeight: "bold" }}>{0}</span>
               <Box className="dropicon">
                 <HeadsetMicIcon sx={icon} />
                 <Box
