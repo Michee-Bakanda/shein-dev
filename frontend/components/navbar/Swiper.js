@@ -22,24 +22,39 @@ export default function Slide() {
         effect={"fade"}
         // navigation={true}
         autoplay={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[EffectFade, Navigation, Pagination]}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper"
   
       >
         <SwiperSlide>
+         {/* <img src="nav-swiper.png" width="200px" height="30px" style={{objectFit:"contain"}}/>
+          */}
+          <p style={{fontSize:"13px"}}>
+          <b style={{color:"red",margin:"0 5px"}}>
+             
+             Free standard Shipping 
+           </b>
+           order now
+          </p>
         
         </SwiperSlide>
         <SwiperSlide>
-    
+        {/* <p style={{fontSize:"13px"}}>
+          <b style={{color:"red",margin:"0 5px"}}>
+             
+          Get 44%
+           </b>
+          Benefits order now
+          </p> */}
         </SwiperSlide>
         <SwiperSlide>
-        bhj
+ 
         </SwiperSlide>
         <SwiperSlide>
-g
+
         </SwiperSlide>
       </Swiper>
     </>
