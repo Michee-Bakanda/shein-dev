@@ -6,8 +6,9 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Link from "next/link";
 // component
-import CountdownTimer from '/components/navbar/countdown/countdownTimer'
-
+import CountdownTimer from "/components/navbar/countdown/countdownTimer";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 
 // material icons
 import PersonIcon from "@mui/icons-material/Person";
@@ -15,7 +16,7 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import LanguageIcon from "@mui/icons-material/Language";
 import SearchIcon from "@mui/icons-material/Search";
-import LoginIcon from '@mui/icons-material/Login';
+import LoginIcon from "@mui/icons-material/Login";
 // swiper
 import Slide from "./Swiper";
 
@@ -78,9 +79,7 @@ const bottomLink = {
   height: "",
   height: "100%",
   fontWeight: "bold",
-  "&:hover": {
-    borderBottom: "4px solid black",
-  },
+
 };
 
 const icon = {
@@ -102,22 +101,30 @@ const underline = {
   borderBottom: "1px solid #000",
 };
 
-const heading ={
-     fontSize:"14px",
-     fontWeight:"bold",
-     marginBottom:"10px "
-}
- const body = {
-      fontWeight:"400",
-      fontSize:"12px",
-      color:"#555",
-      margin:"5px 0"
- }
-
+const heading = {
+  fontSize: "14px",
+  fontWeight: "bold",
+  marginBottom: "10px ",
+};
+const body = {
+  fontWeight: "400",
+  fontSize: "12px",
+  color: "#555",
+  margin: "5px 0",
+};
+const currencyList = [
+  { label: "DKK/RKK", year: 1994 },
+  { label: "CSK/LSK", year: 1972 },
+  { label: "RSA/DDK", year: 1974 },
+  { label: "COD/FFA", year: 2008 },
+  { label: "USA/", year: "787" },
+  { label: "Schindler's List", year: 1993 },
+  { label: "Pulp Fiction", year: 1994 },
+];
 
 const Navbar = () => {
   const [input, setInput] = React.useState("Shorts and shirts");
-  const [signIn , setSignIn] = React.useState(false)
+  const [signIn, setSignIn] = React.useState(false);
   // const resetInput = () => {
   //        setInput('')
   // };
@@ -169,7 +176,7 @@ const Navbar = () => {
             {/* {new Date().getHours()}
            {new Date().getSeconds()}
            {new Date().getHours()} */}
-           <CountdownTimer CountdownTimestampMs={1650539650000}/>
+            <CountdownTimer CountdownTimestampMs={1650539650000} />
           </Grid>
         </Grid>
         {/* main navbar */}
@@ -257,56 +264,159 @@ const Navbar = () => {
               }}
             >
               <Box className="dropicon">
-              <PersonIcon sx={icon} />
+                <PersonIcon sx={icon} />
                 <Box className="dropicon-content">
-                  <Box sx={{borderBottom:"1px solid lightgrey",padding:"10px 0"}}>
-                     <Link href="https://www.google.com">Sign in | sign up </Link> 
+                  <Box
+                    sx={{
+                      borderBottom: "1px solid lightgrey",
+                      padding: "10px 0",
+                    }}
+                  >
+                    <Link href="https://www.google.com">Sign in | sign up</Link>
                   </Box>
-                  <Box sx={{padding:"5px 0",color:"darkgrey"}}>
-                     <Link href="https://www.google.com">My orders</Link>
+                  <Box sx={{ padding: "5px 0", color: "darkgrey" }}>
+                    <Link href="https://www.google.com">My orders</Link>
                   </Box>
-                  <Box sx={{padding:"5px 0",color:"darkgrey"}}>
-                     <Link href="https://www.google.com">My Message</Link>
+                  <Box sx={{ padding: "5px 0", color: "darkgrey" }}>
+                    <Link href="https://www.google.com">My Message</Link>
                   </Box>
-                  <Box sx={{padding:"5px 0",color:"darkgrey"}}>
-                     <Link href="https://www.google.com">My Coupons</Link>
+                  <Box sx={{ padding: "5px 0", color: "darkgrey" }}>
+                    <Link href="https://www.google.com">My Coupons</Link>
                   </Box>
-                  <Box sx={{padding:"5px 0",color:"darkgrey"}}>
-                     <Link href="https://www.google.com">My Points</Link>
+                  <Box sx={{ padding: "5px 0", color: "darkgrey" }}>
+                    <Link href="https://www.google.com">My Points</Link>
                   </Box>
-                  <Box sx={{padding:"5px 0",color:"darkgrey"}}>
-                     <Link href="https://www.google.com">Recently Received</Link>
+                  <Box sx={{ padding: "5px 0", color: "darkgrey" }}>
+                    <Link href="https://www.google.com">Recently Received</Link>
                   </Box>
-                  <Box sx={{padding:"5px 0",color:"darkgrey"}}>
-                     <Link href="https://www.google.com">more services</Link>
+                  <Box sx={{ padding: "5px 0", color: "darkgrey" }}>
+                    <Link href="https://www.google.com">more services</Link>
                   </Box>
                 </Box>
               </Box>
-              
+
               <Box className="dropicon">
-              <WorkOutlineIcon sx={icon} /> 
-              <Box sx={{position:"absolute",margin:"0 0 30px  30px",fontWeight:"bold"}}>{0}</Box>
-                <Box className="dropicon-content" style={{left:"1200px",position:"fixed", height:"200px",width:"300px"}}>
-                  {signIn?'hello':
-                  
-                    <Box sx={{height:"100%",textAlign:"center"}}>
-                      <Box sx={{display:"flex",justifyContent:"center"}}>
-                      <img src="carrt.png" alt="" style={{width:"100px"}} />
+                <WorkOutlineIcon sx={icon} />
+                <span style={{ fontWeight: "bold" }}>{0}</span>
+                <Box
+                  className="dropicon-content"
+                  style={{
+                    left: "1200px",
+                    position: "fixed",
+                    height: "200px",
+                    width: "300px",
+                  }}
+                >
+                  {signIn ? (
+                    <Typography variant="h6">product item</Typography>
+                  ) : (
+                    <Box sx={{ height: "100%", textAlign: "center" }}>
+                      <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <img
+                          src="carrt.png"
+                          alt=""
+                          style={{ width: "100px" }}
+                        />
                       </Box>
-                      <Typography variant="h6" sx={{color:"#888",fontSize:"14px"}}>Shopping Bag is empty</Typography> <br />
-                      <Typography variant="p" sx={{color:"#888",fontSize:"11px",margin:"40px 0"}}>
-                      Welcome back! If you had items in your shopping bag, we have saved them for you. You can <Link href="https://www.google.com" style={{cursor:"pointer",fontSize:"16px"}}><b> SIGN IN</b></Link>  now to see them, or whenever you're ready to check out.
+                      <Typography
+                        variant="h6"
+                        sx={{ color: "#888", fontSize: "14px" }}
+                      >
+                        Shopping Bag is empty
                       </Typography>
-                      
-                    
-                    </Box>}
+                      <br />
+                      <Typography
+                        variant="p"
+                        sx={{
+                          color: "#888",
+                          fontSize: "11px",
+                          margin: "40px 0",
+                        }}
+                      >
+                        Welcome back! If you had items in your shopping bag, we
+                        have saved them for you. You can{" "}
+                        <Link
+                          href="https://www.google.com"
+                          style={{ cursor: "pointer", fontSize: "16px" }}
+                        >
+                          <b> SIGN IN</b>
+                        </Link>
+                        now to see them, or whenever you're ready to check out.
+                      </Typography>
+                    </Box>
+                  )}
                 </Box>
               </Box>
 
+              <FavoriteIcon sx={icon} />
+              <Box className="dropicon">
+                <HeadsetMicIcon sx={icon} />
+                <Box
+                  className="dropicon-content"
+                  style={{
+                    left: "1300px",
+                    position: "fixed",
+                    height: "100px",
+                    width: "200px",
+                  }}
+                >
+                  <Typography variant="h6" sx={{ fontSize: "14px" }}>
+                    Customer service
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    sx={{ fontSize: "12px", color: "#888" }}
+                  >
+                    what can we do ?
+                  </Typography>
+                </Box>
+              </Box>
+              <Box className="dropicon">
+                <LanguageIcon sx={icon} />
+                <Box
+                  className="dropicon-content"
+                  style={{
+                    left: "1290px",
+                    position: "fixed",
+                    height: "150px",
+                    width: "250px",
+                  }}
+                >
+                  <Typography variant="h6" sx={{ fontSize: "16px" }}>
+                    Currency
+                  </Typography>
+                  <Box sx={{ height:"70px"}}>
+                    <Autocomplete
+                      // disablePortal
+                      id="combo-box-demo"
+                      options={currencyList}
+                      sx={{
+                        width: 300,
+                        height: 10,
+                        marginTop: 1,
+                        marginBottom: 1,
+                      }}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          label="Currency"
+                          sx={{
+                            height: "10px",
+                            width: "200px",
+                            margin: "0px 0 10px 0",
+                          }}
+                        />
+                      )}
+                    />
+                  </Box>
+                  <Typography align="center" color="primary" variant="h6" sx={{fontSize:"16px"}}>
 
-              <FavoriteIcon sx={icon} /> 
-              <HeadsetMicIcon sx={icon} />
-              <LanguageIcon sx={icon} />
+                <Link href="/" style={{color:"blue"}}>International site</Link>
+
+                  </Typography>
+
+                </Box>
+              </Box>
             </Box>
           </Grid>
         </Grid>
@@ -325,64 +435,157 @@ const Navbar = () => {
                 fontSize={12}
                 variant="p"
               >
-                <Link href="">NEW IN</Link>   
+                <Link href="">NEW IN</Link>
               </Typography>
 
               {/* dropdown */}
               <Box className="dropdown-content">
-                <Grid container sx={{padding:"0 40px" ,height:"100%",padding:"0 250px"}}>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={2}>
-                      <Typography variant="p" sx={heading}>New in</Typography>
-                      <Typography variant="p" sx={body}>15/04/2022</Typography>
-                      <Typography variant="p" sx={body}>14/04/2022</Typography>
-                      <Typography variant="p" sx={body}>13/04/2022</Typography>
-                      <Typography variant="p" sx={body}>12/04/2022</Typography>
-                      <Typography variant="p" sx={body}>11/04/2022</Typography>
-                      <Typography variant="p" sx={body}>10/04/2022</Typography>
-                      <Typography variant="p" sx={body}>9/04/2022</Typography>
-                    
-                    
+                <Grid
+                  container
+                  sx={{ padding: "0 40px", height: "100%", padding: "0 250px" }}
+                >
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={2}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      15/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      14/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      13/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      12/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      11/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      10/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      9/04/2022
+                    </Typography>
                   </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={3}>
-                      <Typography variant="p" sx={heading}>New in woman clothing</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Lingerie & Loungewear</Typography>
-                    
-
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={4}>
-                      <Typography variant="p" sx={heading}>New in Beachwear</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Lingerie & Loungewear</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-
-
-
-
-
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"center"}} item md={3}>
-                          <img src="dropimg.webp" alt="image" style={{height:"300px"}} />
-                     </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in woman clothing
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={4}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in Beachwear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <img
+                      src="dropimg.webp"
+                      alt="image"
+                      style={{ height: "300px" }}
+                    />
+                  </Grid>
                 </Grid>
-
               </Box>
             </Box>
             <Box sx={bottomLink} className="dropdown">
@@ -401,54 +604,133 @@ const Navbar = () => {
 
               {/* dropdown */}
               <Box className="dropdown-content">
-              <Grid container sx={{padding:"0 40px" ,height:"100%",padding:"0 250px"}}>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={3}>
-                             <img src="dropimg4.webp" alt="" style={{height:"300px"}} />
-                    
-                    
+                <Grid
+                  container
+                  sx={{ padding: "0 40px", height: "100%", padding: "0 250px" }}
+                >
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <img
+                      src="dropimg4.webp"
+                      alt=""
+                      style={{ height: "300px" }}
+                    />
                   </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={3}>
-                      <Typography variant="p" sx={heading}>Trending</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Lingerie & Loungewear</Typography>
-                    
-
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={3}>
-                      <Typography variant="p" sx={heading}>New in Beachwear</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Lingerie & Loungewear</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-
-
-
-
-
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"center"}} item md={3}>
-                          <img src="dropimage2.webp" alt="image" style={{height:"300px"}} />
-                     </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      Trending
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in Beachwear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <img
+                      src="dropimage2.webp"
+                      alt="image"
+                      style={{ height: "300px" }}
+                    />
+                  </Grid>
                 </Grid>
-
-
-
               </Box>
             </Box>
             <Box sx={bottomLink} className="dropdown">
@@ -468,62 +750,156 @@ const Navbar = () => {
 
               {/* dropdown */}
               <Box className="dropdown-content">
-              <Grid container sx={{padding:"0 40px" ,height:"100%",padding:"0 250px"}}>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={4}>
-                             <img src="drop.gif" alt="" style={{height:"250px",width:"240px"}} />
-                    
-                    
+                <Grid
+                  container
+                  sx={{ padding: "0 40px", height: "100%", padding: "0 250px" }}
+                >
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={4}
+                  >
+                    <img
+                      src="drop.gif"
+                      alt=""
+                      style={{ height: "250px", width: "240px" }}
+                    />
                   </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={2}>
-                      <Typography variant="p" sx={heading}>View All</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                    
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={2}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      View All
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={2}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      Shop by category
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                  </Grid>
 
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={2}>
-                      <Typography variant="p" sx={heading}>Shop by category</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                     </Grid>
-
-                     <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={2}>
-                      <Typography variant="p" sx={heading}>Shop recent release</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-
-
-
-
-
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"center"}} item md={2}>
-                  
-                     </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={2}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      Shop recent release
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                    item
+                    md={2}
+                  ></Grid>
                 </Grid>
-
-
               </Box>
             </Box>
             <Box sx={bottomLink} className="dropdown">
@@ -542,61 +918,316 @@ const Navbar = () => {
 
               {/* dropdown */}
               <Box className="dropdown-content">
-              <Grid container sx={{padding:"0 40px" ,height:"100%",padding:"0 250px"}}>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={3}>
-                             <img src="shn.webp" alt="" style={{height:"300px"}} />
-                    
-                    
+                <Grid
+                  container
+                  sx={{ padding: "0 40px", height: "100%", padding: "0 250px" }}
+                >
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <img src="shn.webp" alt="" style={{ height: "300px" }} />
                   </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={3}>
-                      <Typography variant="p" sx={heading}>highest and Lowest</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Lingerie & Loungewear</Typography>
-                    
-
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:"flex-start"}} item md={3}>
-                      <Typography variant="p" sx={heading}>Kitchen and dining</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Lingerie & Loungewear</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-
-
-
-
-
-                     </Grid>
-                  <Grid sx={{display:"flex",flexDirection:"column", alignItems:""}} item md={3}>
-                  <Typography variant="p" sx={heading}>Personal care</Typography>
-                      <Typography variant="p" sx={body}>New in Dresses</Typography>
-                      <Typography variant="p" sx={body}>New in Tops</Typography>
-                      <Typography variant="p" sx={body}>New in Blouzers</Typography>
-                      <Typography variant="p" sx={body}>New in Browsers</Typography>
-                      <Typography variant="p" sx={body}>Jump suits and Body suits</Typography>
-                      <Typography variant="p" sx={body}>Two pieces</Typography>
-                      <Typography variant="p" sx={body}>New in sweat shirts</Typography>
-                      <Typography variant="p" sx={body}>Outer wear</Typography>
-                      <Typography variant="p" sx={body}>New in Lingerie & Loungewear</Typography>
-                     </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      highest and Lowest
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      Kitchen and dining
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      Personal care
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                  </Grid>
                 </Grid>
+              </Box>
+            </Box>
+            <Box sx={bottomLink} className="dropdown">
+              <Typography
+                sx={{
+                  lineHeight: "50px",
+             
+                }}
+                fontSize={12}
+                variant="p"
+              >
+                <Link href="">CLOTHING</Link>
+              </Typography>
 
+              {/* dropdown */}
+              <Box className="dropdown-content">
+              <Grid
+                  container
+                  sx={{ padding: "0 40px", height: "100%", padding: "0 250px" }}
+                >
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={2}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      15/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      14/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      13/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      12/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      11/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      10/04/2022
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      9/04/2022
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in woman clothing
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={4}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in Beachwear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                    item
+                    md={3}
+                  >
+                    <img
+                      src="clothing.webp"
+                      alt="image"
+                      style={{ height: "300px" }}
+                    />
+                  </Grid>
+                </Grid>
 
 
               </Box>
@@ -612,36 +1243,14 @@ const Navbar = () => {
                 fontSize={12}
                 variant="p"
               >
-                <Link href="">CLOTHING</Link>
-              </Typography>
-
-              {/* dropdown */}
-              <Box className="dropdown-content"></Box>
-            </Box>
-            <Box sx={bottomLink} className="dropdown">
-              <Typography
-                sx={{
-                  lineHeight: "50px",
-                  "&:hover": {
-                    borderBottom: "2px solid #000",
-                  },
-                }}
-                fontSize={12}
-                variant="p"
-              >
                 <Link href="">DRESSES</Link>
               </Typography>
-
-              {/* dropdown */}
-              <Box className="dropdown-content"></Box>
             </Box>
             <Box sx={bottomLink} className="dropdown">
               <Typography
                 sx={{
                   lineHeight: "50px",
-                  "&:hover": {
-                    borderBottom: "2px solid #000",
-                  },
+            
                 }}
                 fontSize={12}
                 variant="p"
@@ -649,16 +1258,13 @@ const Navbar = () => {
                 <Link href="">TOPS</Link>
               </Typography>
 
-              {/* dropdown */}
-              <Box className="dropdown-content"></Box>
+   
             </Box>
             <Box sx={bottomLink} className="dropdown">
               <Typography
                 sx={{
                   lineHeight: "50px",
-                  "&:hover": {
-                    borderBottom: "2px solid #000",
-                  },
+          
                 }}
                 fontSize={12}
                 variant="p"
@@ -666,17 +1272,13 @@ const Navbar = () => {
                 <Link href="">LINGERIE & LOUNGE</Link>
               </Typography>
 
-              {/* dropdown */}
-              <Box className="dropdown-content"></Box>
             </Box>
 
             <Box sx={bottomLink} className="dropdown">
               <Typography
                 sx={{
                   lineHeight: "50px",
-                  "&:hover": {
-                    borderBottom: "2px solid #000",
-                  },
+            
                 }}
                 fontSize={12}
                 variant="p"
@@ -684,16 +1286,13 @@ const Navbar = () => {
                 <Link href="">BEACHWEAR</Link>
               </Typography>
 
-              {/* dropdown */}
-              <Box className="dropdown-content"></Box>
+         
             </Box>
             <Box sx={bottomLink} className="dropdown">
               <Typography
                 sx={{
                   lineHeight: "50px",
-                  "&:hover": {
-                    borderBottom: "2px solid #000",
-                  },
+           
                 }}
                 fontSize={12}
                 variant="p"
@@ -701,17 +1300,14 @@ const Navbar = () => {
                 <Link href="">SHOES & ACCESORIES</Link>
               </Typography>
 
-              {/* dropdown */}
-              <Box className="dropdown-content"></Box>
+       
             </Box>
 
             <Box sx={bottomLink} className="dropdown">
               <Typography
                 sx={{
                   lineHeight: "50px",
-                  "&:hover": {
-                    borderBottom: "2px solid #000",
-                  },
+          
                 }}
                 fontSize={12}
                 variant="p"
@@ -719,16 +1315,13 @@ const Navbar = () => {
                 <Link href="">BEAUTY</Link>
               </Typography>
 
-              {/* dropdown */}
-              <Box className="dropdown-content"></Box>
+    
             </Box>
             <Box sx={bottomLink} className="dropdown">
               <Typography
                 sx={{
                   lineHeight: "50px",
-                  "&:hover": {
-                    borderBottom: "2px solid #000",
-                  },
+           
                 }}
                 fontSize={12}
                 variant="p"
@@ -737,7 +1330,121 @@ const Navbar = () => {
               </Typography>
 
               {/* dropdown */}
-              <Box className="dropdown-content"></Box>
+              <Box className="dropdown-content">
+              <Grid
+                  container
+                  sx={{ padding: "0 40px", height: "100%", padding: "0 250px" }}
+                >
+
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={4}
+                  >
+                    <Typography variant="p" sx={heading}>
+                     Explore New in woman clothing
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                    }}
+                    item
+                    md={4}
+                  >
+                    <Typography variant="p" sx={heading}>
+                      New in Beachwear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Blouzers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Browsers
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in sweat shirts
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Outer wear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Lingerie & Loungewear
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Jump suits and Body suits
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Tops
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      New in Dresses
+                    </Typography>
+                    <Typography variant="p" sx={body}>
+                      Two pieces
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                    item
+                    md={4}
+                  >
+                    <img
+                      src="explore.webp"
+                      alt="image"
+                      style={{ height: "300px" }}
+                    />
+                  </Grid>
+                </Grid>
+              </Box>
             </Box>
           </Grid>
           <Grid
