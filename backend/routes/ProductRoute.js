@@ -29,4 +29,18 @@ router.get('/get_products', async(req, res) => {
     }
 })
 
+//Update product wishlist
+router.put('/update_product/:product_id', async(req, res) =>{
+    try {
+        const products = await Product.findByIdAndUpdate(req.params.product_id,{
+            $set:req.body
+        },{new:true})
+
+        res.status(200).json(products)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
+
 module.exports = router
