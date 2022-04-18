@@ -20,10 +20,10 @@ router.post('/create_user', async(req, res) => {
 })
 
 //Get all Products 
-router.get('/get_products', async(req, res) => {
+router.get('/get_users', async(req, res) => {
     try{
-        const products = await Product.find()
-        res.status(200).json(products)
+        const users = await User.find()
+        res.status(200).json(users)
     }catch(error) {
         res.status(404).json(error)
     }

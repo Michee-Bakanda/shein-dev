@@ -28,4 +28,11 @@ router.get('/get_users_wishlist/:userId', async(req, res) => {
     }
 })
 
+//Deleting a users wishlist 
+router.delete('/delete_user_wishlist_item/:wishlistId', async(req, res) => {
+       await WishList.findByIdAndDelete(req.params.wishlistId)
+       res.status(200).json("Successfully Deleted!")
+})
+
+
 module.exports = router
