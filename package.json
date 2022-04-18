@@ -4,7 +4,7 @@
   "description": "A mern stack ecommerce site",
   "main": "server.js",
   "scripts": {
-    "start": "server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
