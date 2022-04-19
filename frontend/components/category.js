@@ -10,7 +10,7 @@ function Category() {
         <h2 style={{marginLeft:"25%",backgroundColor:"white", width:"30%", height:"40px", marginLeft:"38%", borderRadius:"50px", paddingLeft:"100px", border:"3px solid pink", boxShadow:" 6px 13px 5px 8px rgba(0,0,0,0.10)"}}>Shop by Category</h2>
      
 
-      <div style={{color:"black", marginLeft:"1100px", fontSize:"17px", fontWeight:"bold"}}> <a href='https://eur.shein.com/Women-Clothing-c-2030.html?ici=CCCSN=WomenHomePage_ON=Banner_OI=1_CN=cat_TI=50001_aod=0_PS=HZ-7-16_ABT=0&scici=WomenHomePage~~ON_Banner,CN_cat,HZ_all,HI_hotZonehw7dwxa9isp~~7_16~~real_2030~~~~&srctype=homepage&userpath=%3EWomenHomePage%3EWomen-Clothing&src_module=WomenHomePage&src_identifier=on%3DBanner%60cn%3Dcat%60hz%3Dall%60ps%3D7_16%60jc%3Dreal_2030&src_tab_page_id=page_home1649938201148'> View All ></a></div>
+      <div style={{color:"black", marginLeft:"1100px", fontSize:"17px", fontWeight:"bold"}}> <a href='https://eur.shein.com/Women-Clothing-c-2030.html?ici=CCCSN=WomenHomePage_ON=Banner_OI=1_CN=cat_TI=50001_aod=0_PS=HZ-7-16_ABT=0&scici=WomenHomePage~~ON_Banner,CN_cat,HZ_all,HI_hotZonehw7dwxa9isp~~7_16~~real_2030~~~~&srctype=homepage&userpath=%3EWomenHomePage%3EWomen-Clothing&src_module=WomenHomePage&src_identifier=on%3DBanner%60cn%3Dcat%60hz%3Dall%60ps%3D7_16%60jc%3Dreal_2030&src_tab_page_id=page_home1649938201148'> View Al</a></div>
 
       <div style={{marginLeft:"20px", marginTop:"40px", fontSize:"15px", fontWeight:"bold"}}>
 
