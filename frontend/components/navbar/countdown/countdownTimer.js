@@ -42,7 +42,6 @@ const CountdownTimer = ({ CountdownTimestampMs }) => {
   }, [])
 
   function updateRemainingTime(countdown) {
-    console.log('hello world')
     setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown))
   }
 

@@ -5,6 +5,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import Button from "@mui/material/Button";
+import Alert from '@mui/material/Alert';
 import { useState } from "react";
 
 // icons
@@ -88,13 +89,27 @@ const styles = {
 const Footer = () => {
 
 const [email , setEmail] = useState('')
+     
+
+// const alert = ()=>{
+//   return (
+//    <Alert severity="success">This is an info alert — check it out!</Alert>
+//   )
+// }
 
   const handleSubmit = (e) => {
-    console.log(e.target.value);
+    e.preventDefault()
+    // console.log(e.target.value);
 
-    const details = {
+     const details = { email}
+      console.log(details)
+
+    
+      // alert('submitted successfully')
      
-    };
+     
+    
+    
   };
 
   return (
@@ -175,9 +190,11 @@ const [email , setEmail] = useState('')
               type="email"
               placeholder="Enter your email address"
               style={styles.input}
+              value={email}
+              onChange={(e)=> setEmail(e.target.value)}
             />
-            <button type="submit" style={styles.SubmitBtn}>
-              subscribe
+            <button type="submit"  style={styles.SubmitBtn}>
+            Subscribe
             </button>
           </form>
           <Box sx={{ margin: "10px 0" }}>
@@ -207,7 +224,7 @@ const [email , setEmail] = useState('')
           </Box>
         </Grid>
       </Grid>
-      <Grid container sx={{ padding:'0 80px' }}>
+      <Grid container sx={{ padding:'0 80px'}}>
         <Grid item md={12}>
 
           <Box sx={{margin:"10px 0"}}>
