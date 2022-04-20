@@ -53,7 +53,7 @@ export default function Slide() {
             backgroundImage: `url(./1650011945f7b459a358e28960183820008bedc8dd.gif)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center"
           }}
         ></SwiperSlide>
         <SwiperSlide
