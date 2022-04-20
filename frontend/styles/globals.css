@@ -88,3 +88,40 @@ to{
   display: block;
  
 }
+
+.swiper-button-prev:after{
+  color: black;
+  background-color: white;
+  height: 40px;
+  --swiper-navigation-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  font-weight: 1000;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #000;
+  position: absolute;
+  left: 25px;
+  /* right: 0; */
+  bottom: 50px;
+
+}
+
+.swiper-button-next:after {
+  color: black;
+  background-color: white;
+  height: 40px;
+  --swiper-navigation-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  font-weight: 1000;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #000;
+  position: absolute;
+  /* left: 1px; */
+  right: 25px;
+  bottom: 50px;
+}
