@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.css'
 import Category from '../components/category'
 import Deals from '../components/deals'
 import { Brands } from '../components/brandstaff/Brands'
+import { Newbanner } from '../components/newbanner/Newbanner'
 
 
 
@@ -14,6 +15,7 @@ import { Brands } from '../components/brandstaff/Brands'
 export default function Home() {
   return (
       <>
+      <Newbanner />
       <Brands />
       </>
     )
