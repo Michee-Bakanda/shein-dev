@@ -2,7 +2,7 @@
 export default  Banner = () =>{
     return(
         <div>
-           chnsged bsnn
+             <h1>Hello world</h1>
         </div>
     )
 }

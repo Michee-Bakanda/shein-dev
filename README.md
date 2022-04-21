@@ -1,18 +1,16 @@
-# Welcome to the shein Website
-message from **schadrack_btb**
+# Welcome to shein website repository
+Message from **schadrack_btb**
 
-# Work-Flow
-Git clone the repo <br/>
-run npm install to install the depedencies  <br/>
-npm run dev to start the server
+<br/>
 
-# Working with version control
-create branch which you will work in <br/>
-branch name should be associated with your section (eg.banner-section) <br/>
-commit changes every progress (save state) <br/>
-push to github when done  <br/>
-create pull request  <br/>
-ensure there are no merge conflits <br/>
-add a fellow team mate to merge request (no one should merge their own code) <br/>
-once merged run pull command to recieve the updated version of the repository <br/>
+# work-flow
+<br/>
+git clone the repo <br/> than run npm i to install the depedencies <br/>
+please work in your own branches ,  commit  the changes than push to github <br/>
+send pull request before merge and no one should be able to merge their own code
+<br/>
 
+# running the next server
+<br/>
+please use the cd command to enter into the front-end or back-end directory... <br/> than install all the depedencies by running npm i <br/>
+later on run the server by running npm run dev

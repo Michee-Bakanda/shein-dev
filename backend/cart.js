@@ -1,11 +1,8 @@
-const Product = require('../models/product');
+const Product = require('../models/ProductSchema');
 
 
-// databas connection string
-const dbURL="";
-mongoose.connect(dbURL,{useNewurlParser:true,useUnifiedTopology:true})
-.then((result)=>console.log('connected to database')).catch((err)=>console.log(err))
 exports.addToCart = (req, res, next) => {
+    
     req.user.addToCart(req.body.id)
         .then(() => {
             res.redirect('/cart');
