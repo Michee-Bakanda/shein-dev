@@ -85,9 +85,11 @@ const bottomLink = {
 const icon = {
   margin: "0 5px",
   color: "#555",
-  height: "25px",
-  width: "25px",
+  height: "30px",
+  width: "30px",
   cursor: "pointer",
+  // display:'none'
+  // border:'1px solid red'
 };
 
 const lightText = {
@@ -104,7 +106,7 @@ const underline = {
 const heading = {
   fontSize: "14px",
   fontWeight: "bold",
-  marginBottom: "10px ",
+  // marginBottom: "10px ",
 };
 const body = {
   fontWeight: "400",
@@ -125,18 +127,7 @@ const currencyList = [
 const Navbar = () => {
   const [input, setInput] = React.useState("Shorts and shirts");
   const [signIn, setSignIn] = React.useState(false);
-  // const resetInput = () => {
-  //        setInput('')
-  // };
-  // let text1 = ["hello1", "hello2", "hello3"];
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     for (let i = 0; i < text1.length; i++) {
-  //       setInput(text1[i]);
-  //     }
-  //   }, 2000);
-  // }, []);
 
   return (
     <>
@@ -176,7 +167,7 @@ const Navbar = () => {
             {/* {new Date().getHours()}
            {new Date().getSeconds()}
            {new Date().getHours()} */}
-            <CountdownTimer CountdownTimestampMs={1650539650000} />
+            <CountdownTimer CountdownTimestampMs={1651539650000} />
           </Grid>
         </Grid>
         {/* main navbar */}
@@ -254,13 +245,15 @@ const Navbar = () => {
               {/* the fade in slide effect */}
               <Slide />
             </Box>
+            {/* here */}
             <Box
               sx={{
                 width: "350px",
                 height: "70px",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
+                justifyContent: "center",
+                // border:'1px solid red'
               }}
             >
               <Box className="dropicon">
@@ -360,7 +353,7 @@ const Navbar = () => {
                     width: "200px",
                   }}
                 >
-                  <Typography variant="h6" sx={{ fontSize: "14px" }}>
+                  <Typography variant="h6" sx={{ fontSize: "13px" }}>
                     Customer service
                   </Typography>
                   <Typography
