@@ -6,13 +6,20 @@ import Navbar from '../components/navbar/Navbar'
 import styles from '../styles/Home.module.css'
 import Category from '../components/category'
 import Deals from '../components/deals'
+<<<<<<< HEAD
 import Product from '../components/product-first-five'
+=======
+import { Brands } from '../components/brandstaff/Brands'
+import { Newbanner } from '../components/newbanner/Newbanner'
+import { Dailydrops } from '../components/daildrops/Dailydrops'
+>>>>>>> cd2048a950e3452bcc701d04deacdb539bbf4c10
 
 
 
 
 export default function Home() {
   return (
+<<<<<<< HEAD
     <div>
       <Head>
         <title>Sheen</title>
@@ -23,6 +30,13 @@ export default function Home() {
      <Category/>
      <Product/>
  </div>
+=======
+      <>
+      <Newbanner />
+      <Brands />
+      <Dailydrops />
+      </>
+>>>>>>> cd2048a950e3452bcc701d04deacdb539bbf4c10
     )
 
 }
