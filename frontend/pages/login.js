@@ -16,6 +16,7 @@ const [content , setContent] = useState([
       <h1 style={{ margin: '0' }}>Login here</h1>
 
         <BasicTabs/>
+        
 
      
     </div>

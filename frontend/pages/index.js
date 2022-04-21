@@ -6,6 +6,7 @@ import Navbar from '../components/navbar/Navbar'
 import styles from '../styles/Home.module.css'
 import Category from '../components/category'
 import Deals from '../components/deals'
+import Product from '../components/product-first-five'
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
       </Head>
       <Deals/>
      <Category/>
+     <Product/>
  </div>
     )
 
