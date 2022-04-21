@@ -125,3 +125,31 @@ to{
   right: 25px;
   bottom: 50px;
 }
+
+
+main::before{
+  content: 'View more';
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 0 ;
+  background: rgba(255,255,255,.8);
+  color: #000;
+  text-align: center;
+  padding-top: 80%;
+  z-index: 10;
+  padding-left: 20px;
+
+}
+svg{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: 10;
+  font-weight: 100;
+  /* font-size: 10px; */
+
+}

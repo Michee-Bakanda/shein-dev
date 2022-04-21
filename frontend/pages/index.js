@@ -8,6 +8,7 @@ import Category from '../components/category'
 import Deals from '../components/deals'
 import { Brands } from '../components/brandstaff/Brands'
 import { Newbanner } from '../components/newbanner/Newbanner'
+import { Dailydrops } from '../components/daildrops/Dailydrops'
 
 
 
@@ -17,6 +18,7 @@ export default function Home() {
       <>
       <Newbanner />
       <Brands />
+      <Dailydrops />
       </>
     )
 
