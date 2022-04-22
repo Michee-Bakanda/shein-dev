@@ -88,3 +88,9 @@ to{
   display: block;
  
 }
+.gallery-item > button {
+opacity: 0;
+}
+.gallery-item:hover > button {
+  opacity: 1;
+}
