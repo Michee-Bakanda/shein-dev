@@ -26,6 +26,7 @@ import { useEffect } from "react";
 
 const nav = {
   //   height: "150px",
+  width:'100%',
   background: "#f4f4f4",
   boxShadow: "-2px 11px 14px -3px rgba(237,237,237,0.75)",
 };
@@ -37,17 +38,18 @@ const topbar = {
   alignItems: "center",
   justifyContent: "center",
   color: "white",
+  width:'100%'
 };
 const mainNav = {
   border: "1px solid red",
   height: "80px",
-  width: "200px",
+  width:'100%',
 };
 const bottomBar = {
   border: "1px solid red",
   height: "",
 
-  width: "",
+  width:'100%',
 };
 const flexBoxCenter = {
   display: "flex",
