@@ -18,6 +18,7 @@ export default function Home() {
       <>
       <Newbanner />
       <Brands />
+      <Deals/>
       <Dailydrops />
       </>
     )
