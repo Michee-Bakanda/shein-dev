@@ -20,27 +20,27 @@ const buttonArr = [
   },
   {
     "title": "The Denim Guide",
-    "color": "rgb(45, 70, 89)"
+    "color": "rgb(195, 145, 113)"
   },
   {
     "title": "Girl Outing",
-    "color": "rgb(45, 70, 89)"
+    "color": "rgb(211, 196, 175)"
   },
   {
     "title": "Curve",
-    "color": "rgb(45, 70, 89)"
+    "color": "rgb(222, 166, 167)"
   },
   {
     "title": "Energetic Look",
-    "color": "rgb(45, 70, 89)"
+    "color": "rgb(237, 208, 180)"
   },
   {
     "title": "Boho Gal",
-    "color": "rgb(45, 70, 89)"
+    "color": "rgb(143, 123, 116)"
   },
   {
     "title": "Street Style",
-    "color": "rgb(45, 70, 89)"
+    "color": "rgb(55, 62, 88)"
   },
 ]
 
@@ -65,15 +65,17 @@ const GalleryImages = [
 function GalleryButton({ text, theColor }) {
   return (
     <button style={{
-      height: '48px',
-      width: '94px',
+      height: '38px',
+      width: '100px',
       // background: {theColor},
       background:`${theColor}`,
       color:'white',
       borderRadius: '28px',
       border:'none',
       textAlign: 'center',
-      padding: '0 20px',
+      padding: '0 0px',
+      fontSize:'10px',
+      margin:'10px'
     }}>{text}</button>
   )
 }
