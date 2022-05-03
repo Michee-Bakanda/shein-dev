@@ -169,7 +169,7 @@ const Navbar = () => {
             {/* {new Date().getHours()}
            {new Date().getSeconds()}
            {new Date().getHours()} */}
-            <CountdownTimer CountdownTimestampMs={1651539650000} />
+            <CountdownTimer CountdownTimestampMs={1652539650000} />
           </Grid>
         </Grid>
         {/* main navbar */}

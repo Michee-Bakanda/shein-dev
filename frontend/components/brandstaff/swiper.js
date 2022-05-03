@@ -21,9 +21,10 @@ export default function Slide() {
           height: "65vh",
           backgroundColor: "#F5F5F5",
           padding: "20px 30px",
+          margin: "0 35px"
         }}
         slidesPerView={5}
-        spaceBetween={30}
+        spaceBetween={26}
         slidesPerGroup={5}
         loop={true}
         loopFillGroupWithBlank={true}
