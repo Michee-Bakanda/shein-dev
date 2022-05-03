@@ -45,7 +45,7 @@ to{
 }
 
 .dropdown-content {
-  box-shadow: -1px 11px 11px 1px rgba(237,237,237,0.75);
+  /* box-shadow: -1px 11px 11px 1px rgba(237,237,237,0.75); */
   display: none;
   position: fixed;
   background-color: #f9f9f9;
