@@ -9,6 +9,7 @@ import Deals from '../components/deals'
 import { Brands } from '../components/brandstaff/Brands'
 import { Newbanner } from '../components/newbanner/Newbanner'
 import DailyDrops from '../components/daildrops/DailyDrops'
+import PrimarySearchAppBar from '../components/navbar/AppBar'
 // import { Dailydrops } from '../components/daildrops/Dailydrops'
 
 
@@ -17,12 +18,12 @@ import DailyDrops from '../components/daildrops/DailyDrops'
 export default function Home() {
   return (
       <>
+      <PrimarySearchAppBar/>
       <Newbanner />
       <Brands />
-      <Deals/>
-      <Category/>
-      {/* <Dailydrops /> */}
       <DailyDrops/>
+      <Category/>
+      <Deals/>
       </>
     )
 

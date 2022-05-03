@@ -133,7 +133,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Box sx={nav}>
+      <Box sx={nav} className="nav">
         {/* topbar */}
         <Grid container sx={{ background: "#111", color: "white" }}>
           <Grid
@@ -202,7 +202,7 @@ const Navbar = () => {
             </Box>
             <Box sx={mainLink}>
               <Typography sx={lightText} fontSize={17} variant="p">
-                <Link href="">HOME</Link>
+                <Link href="/">HOME</Link>
               </Typography>
             </Box>
           </Grid>
@@ -226,7 +226,7 @@ const Navbar = () => {
                 letterSpacing: "10px",
               }}
             >
-              SHEIN
+             <Link href="/">SHEIN</Link> 
             </Typography>
           </Grid>
           <Grid
@@ -267,7 +267,7 @@ const Navbar = () => {
                       padding: "10px 0",
                     }}
                   >
-                    <Link href="https://www.google.com">Sign in | sign up</Link>
+                    <Link href="/login">Sign in | sign up</Link>
                   </Box>
                   <Box sx={{ padding: "5px 0", color: "darkgrey" }}>
                     <Link href="https://www.google.com">My orders</Link>

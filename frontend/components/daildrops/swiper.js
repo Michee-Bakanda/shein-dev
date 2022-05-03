@@ -20,7 +20,7 @@ export default function Slide() {
       <div
         style={{
           height: "105vh",
-          padding: "10px 50px",
+          padding: "10px 0px",
           background: "#fff",
         }}
       >

@@ -169,3 +169,16 @@ main::before{
 }
 
 /* dont touch this css and please give css unique names */
+.app-bar{
+  display: none;
+}
+
+@media(max-width:1500px){
+    .nav{
+      display: none;
+    }
+    .app-bar{
+      display: flex;
+    }
+ 
+}
