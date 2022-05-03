@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Category() {
   return (
 
-    <div style={{ backgroundColor: "black", width: "100%", height: "500px" }}>
+    <div style={{ backgroundColor: "black", width: "100%", height: "500px",display:'flex',alignItems:'center',justifyContent:'center' }}>
       <div style={{ height: "400px", width: "1240px", cursor: "pointer", marginLeft: "30px" }}>
 
 

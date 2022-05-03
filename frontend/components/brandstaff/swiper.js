@@ -15,11 +15,11 @@ import { Pagination, Navigation } from "swiper";
 export default function Slide() {
   return (
     <>
-    <p style={{textAlign: "center", fontWeight: "bold", fontSize: "30px"}}>Brands</p>
+    <p style={{textAlign: "center", fontWeight: "bold", fontSize: "30px",margin:0}}>Brands</p>
       <Swiper
         style={{
           height: "65vh",
-          backgroundColor: "#F5F5F5",
+          backgroundColor: "#fff",
           padding: "20px 30px",
           margin: "0 35px"
         }}

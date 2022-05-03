@@ -2,12 +2,14 @@ import React from 'react'
 
 function Deals() {
   return (
-    <div style={{backgroundColor:"white", width:"100%", height:"380px"}}>
+    <div style={{backgroundColor:"white", width:"100%", padding:'30px'}}>
 
-        <div style={{marginLeft:"43%"}}><h2>#SHEINdeals</h2></div>
+        <div style={{margin:0, display:'flex',alignItems:'center',justifyContent:'center'}}>
+          <h2 style={{margin:0}}>#SHEINdeals</h2>
+          </div>
         
-        <div style={{display:"flex"}}>
-        <img src='sheindeals.PNG' style={{width:"100%"}}/>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'center' }}>
+        <img src='sheindeals.PNG' style={{margin:'20px 0'}} />
         </div>    
             
     </div>
