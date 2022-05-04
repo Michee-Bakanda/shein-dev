@@ -64,7 +64,7 @@ const styles = {
   },
   SubmitBtn: {
     height: "35px",
-    width: "20%",
+    width: "100px",
     background: "#000",
     color: "#fff",
     border: "none",
@@ -185,7 +185,7 @@ const [email , setEmail] = useState('')
               <AppleIcon />
             </Box>
           </Box>
-          <form onSubmit={handleSubmit}>
+          <form className="footer-form" onSubmit={handleSubmit}>
             <input
               type="email"
               placeholder="Enter your email address"
@@ -211,7 +211,7 @@ const [email , setEmail] = useState('')
           <Typography variant="p" sx={styles.header}>
             We ACCEPT
           </Typography>
-          <Box sx={styles.brandsContainer}>
+          <Box className="brand-container" sx={styles.brandsContainer}>
             <img src="card.png" alt="small brands" style={styles.brands} />
             <img src="card2.png" alt="small brands" style={styles.brands} />
             <img src="cardblue.png" alt="small brands" style={styles.brands} />
@@ -233,7 +233,7 @@ const [email , setEmail] = useState('')
           </Typography>
 
           </Box>
-          <Box sx={{width:'900px' ,flexWrap:'wrap',display:"flex", margin:'5px 0'}}>
+          <Box className="footer-privacy" sx={{width:'900px' ,flexWrap:'wrap',display:"flex", margin:'5px 0'}}>
             <Typography variant="p" sx={{ color: "#888", fontSize: 14 ,margin:'0 5px', textTransform:'capitalize' }}>
               <Link href="/">privacy Center</Link> 
             </Typography>  <span style={{color:"lightgrey"}}>|</span>

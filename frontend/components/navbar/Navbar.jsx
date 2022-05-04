@@ -291,7 +291,8 @@ const Navbar = () => {
               </Box>
 
               <Box className="dropicon">
-                <WorkOutlineIcon sx={icon} />
+               
+                <a href="/cart"> <WorkOutlineIcon sx={icon} /></a>
                 <span style={{ fontWeight: "bold" }}>{0}</span>
                 <Box
                   className="dropicon-content"

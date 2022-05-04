@@ -11,10 +11,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-* {
+*{
   box-sizing: border-box;
-  
+}
+body {
+  box-sizing: border-box;
+   overflow-x: hidden;
   
   /* background:white; */
 }
@@ -173,12 +175,54 @@ main::before{
   display: none;
 }
 
+.res-div{
+  border: 1px solid red;
+  margin: 0;
+}
+
+
+
+
 @media(max-width:1500px){
     .nav{
       display: none;
     }
     .app-bar{
       display: flex;
+    }
+    .deal-image{
+      width: 100%;
+      
+    }
+    .res-div{
+      
+      background-color: #b30000;
+    }
+     .category{
+       display: none;
+
+     }
+     .category-block{
+       border:'1px solid red';
+       display: none;
+       justify-content: space-between;
+     }
+     .category-block > div{
+       flex: 1;
+     }
+     .footer-privacy{
+      display: none;
+    }
+    .brand-container img{
+      width: 50px;
+      object-fit: cover;
+    }
+    .footer-form{
+      margin-top: 30px;
+      font-size:11px ;
+    }
+    .footer-form button{
+      font-size:11px ;
     }
  
 }

@@ -5,6 +5,7 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
 import { useEffect } from 'react';
+import PrimarySearchAppBar from '../components/navbar/AppBar'
 
 
 export default function SimpleBackdrop() {
@@ -19,6 +20,9 @@ export default function SimpleBackdrop() {
     setOpen(!open);
   },[])
   return (
+    <>
+    
+    <PrimarySearchAppBar/>
     <div style={{height:"70vh",padding:"10px",background:'white',display:'flex',}}>
       <Button onClick={handleToggle} style={{margin:"0 auto",display:'flex',flexDirection:'column'}}>
          <h1>OOps url not found</h1>
@@ -32,5 +36,8 @@ export default function SimpleBackdrop() {
         <CircularProgress color="inherit" />
       </Backdrop>
     </div>
+    
+    
+    </>
   );
 }
