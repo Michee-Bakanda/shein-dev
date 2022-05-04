@@ -11,11 +11,13 @@ const Login = () => {
     <>
        <PrimarySearchAppBar/>
     
-    <div style={{ background: '#fff', border: '1px solid red', height: '200px' }}>
-          
-      <h1 style={{ margin: '0 740px', fontSize:"24px" }}>Sign in</h1>
-        
+    <div style={{ background: '#fff', }}>
+            <div style={{display:'flex',justifyContent:'center',padding:10}}>
 
+      <h1 style={{ margin:0, fontSize:"20px" }}>Sign in</h1>
+            </div>
+        
+ 
         <BasicTabs/>
 
      
