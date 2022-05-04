@@ -11,9 +11,9 @@ const [content , setContent] = useState([
 
 
   return (
-    <div style={{ background: '#fff', border: '1px solid red', height: '200px' }}>
+    <div style={{ background: '#fff',height: '800px' }}>
         
-      <h1 style={{ margin: '0' }}>Login here</h1>
+      <h1 style={{ margin: '0 740px', fontSize:"24px" }}>Sign in</h1>
 
         <BasicTabs/>
 
