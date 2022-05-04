@@ -8,7 +8,7 @@ export const Newbanner = () => {
         width:"100%",
         background:'white',
         height: "100vh",
-        padding: "10px 50px",
+      
       }}
     >
       <a href="#">
@@ -17,10 +17,11 @@ export const Newbanner = () => {
             cursor: "pointer",
             // border: "2px solid red",
             height: "90vh",
+            width:'100%',
+           
           
             backgroundImage: `url(./1650011299bc46687323f0d1d94ff128c06b78cdb9.webp)`,
             backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
            
           }}

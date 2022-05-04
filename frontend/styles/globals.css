@@ -178,8 +178,8 @@ main::before{
 .res-div{
   border: 1px solid red;
   margin: 0;
+  /* background-blend-mode: ; */
 }
-
 
 
 

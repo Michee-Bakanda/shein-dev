@@ -22,6 +22,7 @@ export default function Slide() {
           height: "105vh",
           padding: "10px 0px",
           background: "#fff",
+          margin:0
         }}
       >
         <p
@@ -55,7 +56,7 @@ export default function Slide() {
           height: "60vh",
           backgroundColor: "#fff",
           padding: "0 5px",
-          margin: "0 20px",
+         
         }}
         slidesPerView={6}
         spaceBetween={5}
