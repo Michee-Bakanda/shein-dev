@@ -5,7 +5,7 @@ const cart = () => {
   return (
    <>
         <CartComp/>
-   
+
    </>
   )
 }
