@@ -4,16 +4,16 @@ import Link from 'next/link'
 function Category() {
   return (
 
-    <div style={{ backgroundColor: "black", width: "100%", height: "500px",display:'flex',alignItems:'center',justifyContent:'center' }}>
-      <div style={{ height: "400px", width: "1240px", cursor: "pointer", marginLeft: "30px" }}>
+    <div className='white-bg'  style={{ backgroundColor: "#000", width: "100%", height: "auto",display:'flex',alignItems:'center',justifyContent:'center' }}>
+      <div className='category-block'  style={{ height: "400px", width: "1240px", cursor: "pointer", marginLeft: "30px" }}>
 
 
         <h2 style={{ marginLeft: "25%", backgroundColor: "white", width: "30%", height: "40px", marginLeft: "38%", borderRadius: "50px", paddingLeft: "100px", border: "3px solid pink", boxShadow: " 6px 13px 5px 8px rgba(0,0,0,0.10)" }}>Shop by Category</h2>
 
 
-        <div style={{ color: "white", marginLeft: "1100px", fontSize: "17px" }}> <a href='https://eur.shein.com/Women-Clothing-c-2030.html?ici=CCCSN=WomenHomePage_ON=Banner_OI=1_CN=cat_TI=50001_aod=0_PS=HZ-7-16_ABT=0&scici=WomenHomePage~~ON_Banner,CN_cat,HZ_all,HI_hotZonehw7dwxa9isp~~7_16~~real_2030~~~~&srctype=homepage&userpath=%3EWomenHomePage%3EWomen-Clothing&src_module=WomenHomePage&src_identifier=on%3DBanner%60cn%3Dcat%60hz%3Dall%60ps%3D7_16%60jc%3Dreal_2030&src_tab_page_id=page_home1649938201148'> View All ></a></div>
+        <div  style={{ color: "white", marginLeft: "1100px", fontSize: "17px" }}> <Link href='https://eur.shein.com/Women-Clothing-c-2030.html?ici=CCCSN=WomenHomePage_ON=Banner_OI=1_CN=cat_TI=50001_aod=0_PS=HZ-7-16_ABT=0&scici=WomenHomePage~~ON_Banner,CN_cat,HZ_all,HI_hotZonehw7dwxa9isp~~7_16~~real_2030~~~~&srctype=homepage&userpath=%3EWomenHomePage%3EWomen-Clothing&src_module=WomenHomePage&src_identifier=on%3DBanner%60cn%3Dcat%60hz%3Dall%60ps%3D7_16%60jc%3Dreal_2030&src_tab_page_id=page_home1649938201148'> View All ></Link></div>
 
-        <div style={{ marginLeft: "20px", marginTop: "40px", fontSize: "15px", fontWeight: "bold" }}>
+        <div   style={{ fontSize: "15px", fontWeight: "bold" }}>
 
           <div style={{ display: "flex" }}>
             <Link href="https://za.shein.com/Women-Dresses-c-1727.html?ici=CCCSN=WomenHomePage_ON=Banner_OI=1_CN=categoryPC_TI=50001_aod=0_PS=HZ-6-4_ABT=0&scici=WomenHomePage~~ON_Banner,CN_categoryPC,HZ_4,HI_hotZone2yxg3pk3gqt~~6_4~~real_1727~~~~&srctype=homepage&userpath=%3EWomenHomePage%3EWomen-Dresses&src_module=WomenHomePage&src_identifier=on%3DBanner%60cn%3DcategoryPC%60hz%3D4%60ps%3D6_4%60jc%3Dreal_1727&src_tab_page_id=page_home1650372871069">
@@ -80,7 +80,7 @@ function Category() {
             </div>
           </div>
 
-          <div style={{ display: "flex", marginTop: "15px" }}>
+          <div  style={{ display: "flex", marginTop: "15px", flexWrap:'wrap' }}>
             <div style={{ backgroundColor: "white", width: "230px", height: "80px", marginLeft: "10px", display: "flex" }}>
               <img src='jumpsuits.png' style={{ width: "50px", height: "60px" }} />
               <p>Jumpsuits and  Bodysuits</p>

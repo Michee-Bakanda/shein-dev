@@ -9,7 +9,7 @@ function Deals() {
           </div>
         
         <div style={{display:'flex',alignItems:'center',justifyContent:'center' }}>
-        <img src='sheindeals.PNG' style={{margin:'20px 0'}} />
+        <img className='deal-image' src='sheindeals.PNG' style={{margin:'20px 0'}} />
         </div>    
             
     </div>
